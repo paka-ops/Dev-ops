@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a8413ed-aba0-4745-b857-9095fa2a6679" name="Changes" comment="" />
+    <list default="true" id="1a8413ed-aba0-4745-b857-9095fa2a6679" name="Changes" comment="Class diagram">
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/DesignController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/IngredientImplement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/IngredientNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/IngredientRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Taco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/WebConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/resources/Schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/resources/data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TicketManaging/src/main/resources/TiketBus.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TicketManaging/src/main/resources/TiketBus.drawio.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,9 +38,22 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Wess/MySpringJavaProject/TicketManaging/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Wess\MySpringJavaProject\TicketManaging\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Wess\MySpringJavaProject\TicketManaging\src\main\resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,10 +63,26 @@
       <option name="presentableId" value="Default" />
       <updated>1742568531149</updated>
       <workItem from="1742568532692" duration="211000" />
+      <workItem from="1744273726521" duration="977000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Class diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Class diagram" />
   </component>
 </project>

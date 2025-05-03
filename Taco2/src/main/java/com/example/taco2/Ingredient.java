@@ -1,28 +1,48 @@
 package com.example.taco2;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import lombok.*;
-
-
-@Getter @Setter @AllArgsConstructor
+ @Data @NoArgsConstructor
 public class Ingredient {
-    private String id;
+    private String ingredientId;
     private String name;
     private Type type;
 
-    public String getId() {
-
-        return id;
+    public String getIngredientId() {
+        return ingredientId;
     }
 
-    public void setId(String id) {
-
-        this.id = id;
+    public void setIngredientId(String ingredientId) {
+        this.ingredientId = ingredientId;
     }
 
+    public String getName() {
+        return name;
+    }
 
-    public static enum Type{
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public Ingredient(String ingredientId, String name, Type type) {
+        this.ingredientId = ingredientId;
+        this.name = name;
+        this.type = type;
+    }
+
+    public static  enum Type{
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
-    }
-}
 
+    }
+
+}

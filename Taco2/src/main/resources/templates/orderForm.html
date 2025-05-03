@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order form</title>
+</head>
+<body>
+    <h1>SaveOrder</h1>
+  <form method="post"  th:object="${order}">
+      <div class="input-form">
+          <label >Name : </label>
+          <input type="text"  th:field="*{deliveryName}">
+          <div th:if="${#fields.hasErrors('deliveryName')}">
+              <span th:errors="*{deliveryName}"></span>
+          </div>
+          <p></p>
+      </div>
+
+      <div class="input-form">
+          <label >Street : </label>
+          <input type="text" th:field="*{deliveryStreet}">
+          <div th:if="*{#fields.hasErrors('deliveryStreet')}">
+              <span th:errors="*{deliveryStreet}"></span>
+          </div>
+          <p></p>
+      </div>
+      <div class="input-form">
+          <label >City : </label>
+          <input type="text" name="" th:field="*{deliveryCity}">
+          <div th:if="${#fields.hasErrors('deliveryCity')}">
+              <span th:errors="*{deliveryCity}"></span>
+          </div>
+          <p></p>
+      </div>
+      <div class="input-form">
+          <label >State : </label>
+          <input type="text" name="" th:field="*{deliveryState}">
+          <div th:if="${#fields.hasErrors('deliveryState')}">
+              <span th:errors="*{deliveryState}"></span>
+          </div>
+          <p></p>
+      </div>
+      <div class="input-form">
+          <label >Zip : </label>
+          <input type="text" name="" th:field="*{deliveryZip}">
+          <div th:if="${#fields.hasErrors('deliveryZip')}">
+              <span th:errors="*{deliveryZip}"></span>
+          </div>
+          <p></p>
+      </div>
+      <div class="input-form">
+          <label >CcNumber : </label>
+          <input type="text" name="" th:field="*{ccNumber}">
+          <div th:if="${#fields.hasErrors('ccNumber')}">
+              <span th:errors="*{ccNumber}"></span>
+          </div>
+          <p></p>
+      </div>
+      <div class="input-form">
+          <label >ccExpiration : </label>
+          <input type="text" name="" th:field="*{ccExpiration}">
+          <p></p>
+      </div>
+      <div class="input-form">
+          <label >ccCVV : </label>
+          <input type="text" name="" th:field="*{ccCVV}">
+          <p></p>
+      </div>
+      <div >
+          <input type="submit" value="Submit">
+      </div>
+  </form>
+</body>
+</html>

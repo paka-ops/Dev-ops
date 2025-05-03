@@ -1,0 +1,162 @@
+package com.example.taco2;
+
+import jakarta.validation.constraints.NotBlank;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class Order {
+
+    private long id;
+    @NotBlank(message = "Name is requierd")
+    private String deliveryName;
+    @NotBlank(message = "Street is requierd")
+    private String deliveryStreet;
+    @NotBlank(message = "City is requierd")
+    private String deliveryCity;
+    @NotBlank(message = "State is requierd")
+    private String deliveryState;
+    @NotBlank(message = "Zip is requierd")
+    private String deliveryZip;
+    @NotBlank(message = "CcNumber is requierd")
+    private String ccNumber;
+    @NotBlank(message = "ccExpiration is requierd")
+    private String ccExpiration;
+    @NotBlank(message = "ccCVV is requierd")
+    private String ccCVV;
+    private List<Taco> taco = new ArrayList<>();
+    private Date placedAt;
+
+    public Date getPlacedAt() {
+        return placedAt;
+    }
+
+    public void setPlacedAt(Date createdAt) {
+        this.placedAt = createdAt;
+    }
+
+    public Order(long id, String name, String street, String city, String state, String zip, String ccNumber, String ccExpiration, String ccCVV) {
+        this.id = id;
+        this.deliveryName = name;
+        this.deliveryStreet = street;
+        this.deliveryCity = city;
+        this.deliveryState = state;
+        this.deliveryZip = zip;
+        this.ccNumber = ccNumber;
+        this.ccExpiration = ccExpiration;
+        this.ccCVV = ccCVV;
+    }
+    public Order(String name, String street, String city, String state, String zip, String ccNumber, String ccExpiration, String ccCVV, String cccvv ) {
+
+        this.deliveryName = name;
+        this.deliveryStreet = street;
+        this.deliveryCity = city;
+        this.deliveryState = state;
+        this.deliveryZip = zip;
+        this.ccNumber = ccNumber;
+        this.ccExpiration = ccExpiration;
+        this.ccCVV = ccCVV;
+
+    }
+    public Order(String name, String street, String city, String state, String zip, String ccNumber, String ccExpiration, String ccCVV, String cccvv ,Date createdAt,List<Taco> taco) {
+
+        this.deliveryName = name;
+        this.deliveryStreet = street;
+        this.deliveryCity = city;
+        this.deliveryState = state;
+        this.deliveryZip = zip;
+        this.ccNumber = ccNumber;
+        this.ccExpiration = ccExpiration;
+        this.ccCVV = ccCVV;
+        this.taco = taco;
+
+    }
+    public Order(){
+
+    }
+
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getdeliveryName() {
+        return deliveryName;
+    }
+
+    public void setdeliveryName(String name) {
+        this.deliveryName = name;
+    }
+
+    public String getdeliveryStreet() {
+        return deliveryStreet;
+    }
+
+    public void setdeliveryStreet(String street) {
+        this.deliveryStreet = street;
+    }
+
+    public String getdeliveryCity() {
+        return deliveryCity;
+    }
+
+    public void setdeliveryCity(String city) {
+        this.deliveryCity = city;
+    }
+
+    public String getdeliveryState() {
+        return deliveryState;
+    }
+
+    public void setdeliveryState(String state) {
+        this.deliveryState = state;
+    }
+
+    public String getdeliveryZip() {
+        return deliveryZip;
+    }
+
+    public void setdeliveryZip(String zip) {
+        this.deliveryZip = zip;
+    }
+
+    public String getCcNumber() {
+        return ccNumber;
+    }
+
+    public void setCcNumber(String ccNumber) {
+        this.ccNumber = ccNumber;
+    }
+
+    public String getCcExpiration() {
+        return ccExpiration;
+    }
+
+    public void setCcExpiration(String ccExpiration) {
+        this.ccExpiration = ccExpiration;
+    }
+
+    public String getCcCVV() {
+        return ccCVV;
+    }
+
+    public void setCcCVV(String ccCVV) {
+        this.ccCVV = ccCVV;
+    }
+
+    public List<Taco> getTaco() {
+        return taco;
+    }
+
+    public void setTaco(Taco taco) {
+        this.taco.add(taco);
+    }
+}
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bienvenu sur notre site</h1>
+    <div class="ingredient-group">
+    <form method="post" th:object="${taco}" action="http://localhost:8080/taco/saveTaco" >
+        <div class="wrap-group">
+            <h3>Wraps</h3>
+            <div th:each="ingredient : ${wrap}">
+                <label th:for="${ingredient.name}" th:text="${ingredient.name}"></label>
+                <input type="checkbox" th:value="${ingredient.ingredientId}" name="ingredients">
+
+        </div>
+
+        <div class="vegges-group">
+            <h3>Veggies</h3>
+            <div th:each="ingredient : ${vegges}">
+                <label th:for="${ingredient.name}" th:text="${ingredient.name}"></label>
+                <input type="checkbox" th:value="${ingredient.ingredientId}" name="ingredients">
+            </div>
+        </div>
+        </div>
+        <div class="protein-group">
+            <h3>Proteins</h3>
+            <div th:each="ingredient : ${protein}">
+                <label th:for="ingredient.name" th:text="${ingredient.name}"></label>
+                <input type="checkbox" name="ingredients" th:value="${ingredient.ingredientId}">
+            </div>
+        </div>
+        <div class="cheese-group">
+            <h3>Cheeses</h3>
+            <div th:each="ingredient : ${cheese}">
+                <label th:for="${ingredient.name}" th:text="${ingredient.name}"></label>
+                <input type="checkbox" name="ingredients" th:value="${ingredient.ingredientId}">
+            </div>
+        </div>
+        <div class="sauce-group">
+            <h3>Sauces</h3>
+            <div th:each="ingredient : ${sauce}">
+                <label th:for="ingredient.name" th:text="${ingredient.name}"></label>
+                <input type="checkbox" name="ingredients" th:value="${ingredient.ingredientId}">
+            </div>
+        </div>
+        <div >
+            <label for="name-group"> name</label>
+            <input type="text" th:field="*{name}">
+            <div th:if="${#fields.hasErrors('name')}">
+                <span th:errors="*{name}"  style="color: red">veuillez sasir le nom</span>
+            </div>
+        </div>
+        <div>
+            <p></p>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+    </div>
+</body>
+</html>

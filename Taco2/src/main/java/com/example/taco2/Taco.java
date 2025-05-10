@@ -1,31 +1,28 @@
 package com.example.taco2;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@Entity
 
 public class Taco {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long tacoId;
-
-    public Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
     @NotBlank(message ="Veuillez saisir la valeur")
     @Size(min=3)
     private String name;
+
     @NotNull
-    private List<String> ingredients;
+    @ManyToMany(targetEntity = Ingredient.class)
+    private List<Ingredient> ingredients;
     private Date createdAt;
-    public Taco(long id,String name){
+    public Taco(long id, String name){
         this.tacoId = id;
         this.name = name;
     }
@@ -34,7 +31,7 @@ public class Taco {
         this.name = name;
         this.createdAt = createdAt;
     }
-    public Taco(long tacoId, String name,Date createdAt, List<String> ingredients) {
+    public Taco(long tacoId, String name,Date createdAt, List<Ingredient> ingredients) {
         this (name,createdAt);
         this.tacoId = tacoId;
         this.ingredients = ingredients;
@@ -59,11 +56,19 @@ public class Taco {
         this.name = name;
     }
 
-    public List<String> getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+    public Date getCreatedAt() {
+        return this.createdAt;
+    }
+    @PrePersist
+
+    public void setCreatedAt() {
+        this.createdAt = new Date();
     }
 }

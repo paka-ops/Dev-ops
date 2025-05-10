@@ -1,13 +1,16 @@
 package com.example.taco2;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@Entity
+@Table(name = "taco_Order")
 public class Order {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @NotBlank(message = "Name is requierd")
     private String deliveryName;
@@ -25,15 +28,29 @@ public class Order {
     private String ccExpiration;
     @NotBlank(message = "ccCVV is requierd")
     private String ccCVV;
+    @ManyToMany(targetEntity = Taco.class)
     private List<Taco> taco = new ArrayList<>();
     private Date placedAt;
+
+
+    public Order(String deliveryName, String deliveryStreet, String deliveryCity, String deliveryState, String deliveryZip, String ccNumber, String ccExpiration, String ccCVV, Date placedAt) {
+        this.deliveryName = deliveryName;
+        this.deliveryStreet = deliveryStreet;
+        this.deliveryCity = deliveryCity;
+        this.deliveryState = deliveryState;
+        this.deliveryZip = deliveryZip;
+        this.ccNumber = ccNumber;
+        this.ccExpiration = ccExpiration;
+        this.ccCVV = ccCVV;
+        this.placedAt = placedAt;
+    }
 
     public Date getPlacedAt() {
         return placedAt;
     }
-
-    public void setPlacedAt(Date createdAt) {
-        this.placedAt = createdAt;
+    @PrePersist
+    public void setPlacedAt() {
+        this.placedAt = new Date();
     }
 
     public Order(long id, String name, String street, String city, String state, String zip, String ccNumber, String ccExpiration, String ccCVV) {
@@ -47,7 +64,7 @@ public class Order {
         this.ccExpiration = ccExpiration;
         this.ccCVV = ccCVV;
     }
-    public Order(String name, String street, String city, String state, String zip, String ccNumber, String ccExpiration, String ccCVV, String cccvv ) {
+    public Order(String name, String street, String city, String state, String zip, String ccNumber, String ccExpiration, String ccCVV, String cccvv, String placedAt) {
 
         this.deliveryName = name;
         this.deliveryStreet = street;

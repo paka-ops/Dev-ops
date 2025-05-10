@@ -1,11 +1,14 @@
 package com.example.taco2;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+@Entity
  @Data @NoArgsConstructor
 public class Ingredient {
+    @Id
     private String ingredientId;
     private String name;
     private Type type;

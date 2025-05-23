@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Bootstrap</title>
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body class="p-5">
+
+<div class="container">
+    <h2 class="mb-4">Formulaire d'inscription</h2>
+    <form>
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Adresse email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="motdepasse" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="motdepasse">
+        </div>
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+    </form>
+</div>
+
+</body>
+</html>

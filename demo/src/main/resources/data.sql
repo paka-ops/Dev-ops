@@ -1,0 +1,1 @@
+insert into Person(id,personName,secondName,email,telephone,passwords,createdAt,roles,isActif) values(3,'PAKA','Wess','wesspaka@gmail.com','dfds', '940809','2025-05-21 12:30:39','Admin',true);

@@ -11,4 +11,9 @@ public class Faculty {
     private String id;
     private String name;
     private String doyen;
+
+    public Faculty(String facultyName, String doyen) {
+        this.name = facultyName;
+        this.doyen = doyen;
+    }
 }

@@ -4,14 +4,16 @@ create table Person(
     secondName varchar(64),
     email varchar(28),
     telephone varchar(18),
-    password varchar(8),
+    passwords varchar(8),
+    createdAt TIMESTAMP,
     roles varchar(10),
     isactif  integer
+
 );
 create table Facutlty(
     id integer primary key ,
     facultyname varchar(50),
-    doyen varchar(50),
+    doyen varchar(50)
 );
 create table Book(
     isbn integer primary key ,

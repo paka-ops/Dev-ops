@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bibliothèque Centrale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{bootstrap/css/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{bootstrap/js/bootstrap.js}" rel="stylesheet">
+    <style>
+        .hero {
+            background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 5px black;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            transition: 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">📚 Bibliothèque</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#catalogue">Catalogue</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gestion">Gestion</a></li>
+                <li class="nav-item"><a class="nav-link" href="#auth">Connexion</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="py-5 bg-light" id="gestion">
+    <div class="container">
+        <h2 class="text-center mb-4">Gestion des livres</h2>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Second Name</th>
+                <th>Email</th>
+                <th>Telephone</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="element : ${admins}">
+                <td th:text="${element.id}"></td>
+                <td th:text="${element.name}"> </td>
+                <td th:text="${element.secondName}"> </td>
+                <td th:text="${element.email}"> </td>
+                <td th:text="${element.telephone}"> </td>
+                <td> </td>
+                <td>
+
+                    <button class="btn btn-sm btn-warning"  onclick="deleteUser(5)">Modifier</button>
+                    <button class="btn btn-sm btn-danger">Supprimer</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<script type="text/javascript">
+
+    function deleteUser(id){
+        fetch(`http://localhost:8080/admin/${id}`,{
+            method: 'DELETE'
+        });
+
+    }
+
+</script>
+</body>

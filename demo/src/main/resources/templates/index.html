@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bibliothèque Centrale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link th:href="@{bootstrap/css/bootstrap.css}" rel="stylesheet">
+  <link th:href="@{bootstrap/js/bootstrap.js}" rel="stylesheet">
+  <style>
+    .hero {
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center center;
+      background-size: cover;
+      height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 1px 1px 5px black;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      transition: 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<object data="navbar.html" type="text/html"></object>
+
+
+<!-- Hero -->
+<section class="hero text-center">
+  <div class="animate__animated animate__fadeInDown">
+    <h1 class="display-4">Bienvenue à la Bibliothèque Centrale</h1>
+    <p class="lead">Explorez, lisez et découvrez le savoir.</p>
+    <a href="#catalogue" class="btn btn-primary btn-lg mt-3">Voir les livres</a>
+  </div>
+</section>
+
+<!-- Recherche -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Recherche de livres</h2>
+    <form class="d-flex justify-content-center">
+      <input type="text" class="form-control w-50 me-2" placeholder="Titre, auteur, thème...">
+      <button class="btn btn-outline-primary">Rechercher</button>
+    </form>
+  </div>
+</section>
+<script type="text/javascript">
+  fetch("navbar.html")
+  .then(data => document.getElementById("navbar").innerHTML = data)
+</script>
+</body>
+</html>

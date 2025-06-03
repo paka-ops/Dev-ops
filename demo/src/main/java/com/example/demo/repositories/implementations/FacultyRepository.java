@@ -44,10 +44,13 @@ public class FacultyRepository implements IFacutly {
     public Faculty findOne(String id) throws ElementNotFoundException {
         String sql = "select name,doyen from Faculty where id = ?";
         Faculty result = jdbcTemplate.queryForObject(sql,this::rowMapper);
+
         if(result.equals(null)){
             throw new ElementNotFoundException("Element non trouvé ");
         }else {
             return result;
         }
+
+
     }
 }

@@ -12,9 +12,15 @@ create table Person(
 
 );
 create table Faculty(
+
                         id integer primary key ,
                         facultyname varchar(50),
                         doyen varchar(50)
+
+    id integer primary key ,
+    facultyname varchar(50),
+    doyen varchar(50)
+
 );
 create table Book(
                      isbn integer primary key ,
@@ -35,3 +41,10 @@ create table Student_Faculty(
                                 foreign key (studentId) references Person(id),
                                 foreign key (facId) references Faculty(id)
 );
+
+    studentId integer,
+    facId integer,
+    foreign key (studentId) references Person(id),
+    foreign key (facId) references Faculty(id)
+);
+

@@ -40,6 +40,7 @@ public class StudentController {
     public String getForm(Model model) {
         try{
 
+
             List<Faculty> faculties = facultyRepository.findAll();
             model.addAttribute("faculties",faculties);
 
@@ -59,4 +60,7 @@ public class StudentController {
         return null;
 
     }
+
 }
+
+

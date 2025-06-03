@@ -5,18 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a8413ed-aba0-4745-b857-9095fa2a6679" name="Changes" comment="Class diagram">
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/DesignController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/IngredientImplement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/IngredientNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/IngredientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Taco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/WebConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/resources/Schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/resources/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Taco2/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TicketManaging/src/main/resources/TiketBus.drawio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TicketManaging/src/main/resources/TiketBus.drawio.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco/src/main/java/com/example/taco/Taco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/IngredientRepository2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/OrderRepository2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/TacoRepository2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/src/main/java/com/Taco/Demo1Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/src/main/java/com/Taco/Taco.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/src/main/resources/templates/Home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo1/src/test/java/com/Taco/Demo1ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Taco/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Taco/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Taco.java" beforeDir="false" afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/Taco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/TacoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Taco2/src/main/java/com/example/taco2/TacoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TicketManaging/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TicketManaging/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/eCommerce/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,26 +48,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Taco/src/main/resources/application.properties" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Taco2/src/main/resources/application.properties" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2udBNQsxAaSCJ1sH6NsQSrTMjZN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Wess/MySpringJavaProject/TicketManaging/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Wess/MySpringJavaProject/TicketManaging/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Wess\MySpringJavaProject\TicketManaging\src\main\resources" />
@@ -63,8 +92,30 @@
       <option name="presentableId" value="Default" />
       <updated>1742568531149</updated>
       <workItem from="1742568532692" duration="211000" />
-      <workItem from="1744273726521" duration="977000" />
+      <workItem from="1744273726521" duration="1946000" />
+      <workItem from="1744362584811" duration="1223000" />
+      <workItem from="1744708106135" duration="14000" />
+      <workItem from="1744743941934" duration="67000" />
+      <workItem from="1745520901916" duration="1676000" />
+      <workItem from="1745597103738" duration="123000" />
+      <workItem from="1746290400049" duration="249000" />
+      <workItem from="1746818389526" duration="989000" />
     </task>
+    <task id="LOCAL-00001" summary="Class diagram">
+      <created>1744275323013</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744275323014</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Class diagram">
+      <created>1744275435526</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744275435526</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bibliothèque Centrale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .hero {
+            background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 5px black;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            transition: 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center mb-4">Connexion / Inscription</h2>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <h4>Connexion</h4>
+            <form method="post" th:object="${student}">
+                <div class="mb-3">
+                    <label></label>
+                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                </div>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
+                <div class="mb-3">
+                    <label></label>
+                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                </div>
+                <div class="mb-3">
+                    <label></label>
+                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                </div>
+                <div class="mb-3">
+                    <label></label>
+                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                </div>
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                </div>
+                <div class="mb-3">
+                    <label>Mot de passe</label>
+                    <input type="password" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label> faculty</label>
+                    <select id="choix" class="form-select" aria-label="Menu déroulant">
+                        <option selected disabled>-- Sélectionnez un élément --</option>
+                        <div th:if="${faculties != null }">
+
+                            <option th:each="faculty : ${faculties}" th:text="${faculty.name}" th:value="${faculty.id}" > </option>
+                        </div>
+                        <div th:unless="${faculties != null }">
+                            <option th:text ="${message}"></option>
+                        </div>
+                    </select>
+                </div>
+                <button class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+        <div class="col-md-6 mb-3">
+            <h4>Inscription</h4>
+            <form>
+                <div class="mb-3">
+                    <label>Nom complet</label>
+                    <input type="text" class="form-control" placeholder="Jean Dupont">
+                </div>
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                </div>
+                <div class="mb-3">
+                    <label>Mot de passe</label>
+                    <input type="password" class="form-control">
+                </div>
+                <button class="btn btn-success">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+</body>
+</html>

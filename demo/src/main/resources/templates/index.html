@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,10 +24,11 @@
     }
   </style>
 </head>
+<div th:replace="fragments/navbar :: navbar"></div>
 <body>
 
 <!-- Navbar -->
-<object data="navbar.html" type="text/html"></object>
+
 
 
 <!-- Hero -->
@@ -48,9 +50,11 @@
     </form>
   </div>
 </section>
+
 <script type="text/javascript">
   fetch("navbar.html")
-  .then(data => document.getElementById("navbar").innerHTML = data)
+          .then(data => document.getElementById("navbar").innerHTML = data)
 </script>
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

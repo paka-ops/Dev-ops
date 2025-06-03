@@ -1,6 +1,6 @@
 
 create table Person(
-                       id integer primary key ,
+                       id integer primary key auto_increment ,
                        personName VARCHAR(64),
                        secondName varchar(64),
                        email varchar(28),
@@ -10,16 +10,12 @@ create table Person(
                        roles varchar(10),
                        isactif  integer
 
+
 );
 create table Faculty(
-
-                        id integer primary key ,
+                        id varchar(3) primary key ,
                         facultyname varchar(50),
                         doyen varchar(50)
-
-    id integer primary key ,
-    facultyname varchar(50),
-    doyen varchar(50)
 
 );
 create table Book(
@@ -42,9 +38,4 @@ create table Student_Faculty(
                                 foreign key (facId) references Faculty(id)
 );
 
-    studentId integer,
-    facId integer,
-    foreign key (studentId) references Person(id),
-    foreign key (facId) references Faculty(id)
-);
 

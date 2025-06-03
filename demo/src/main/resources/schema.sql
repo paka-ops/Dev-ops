@@ -10,7 +10,7 @@ create table Person(
     isactif  integer
 
 );
-create table Facutlty(
+create table Faculty(
     id integer primary key ,
     facultyname varchar(50),
     doyen varchar(50)
@@ -32,5 +32,5 @@ create table Student_Faculty(
     studentId integer,
     facId integer,
     foreign key (studentId) references Person(id),
-    foreign key (facId) references Facutlty(id)
+    foreign key (facId) references Faculty(id)
 );

@@ -31,11 +31,11 @@ public class AdminController {
         return "adminPage";
     }
     @DeleteMapping("admin/{id}")
-    public String deleteAdmin(@PathVariable("id") long id){
+    public String deleteAdmin(@PathVariable("id") long id) throws ElementNotFoundException {
         adminRepository.delete(id);
         return "redirect:admin";
     }
-    @GetMapping("admin/{id]")
+    @GetMapping("admin/{id}")
     public String findAdmin(@PathVariable("id") long id){
         try {
             adminRepository.findById(id);

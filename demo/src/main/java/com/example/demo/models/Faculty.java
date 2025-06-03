@@ -16,4 +16,5 @@ public class Faculty {
         this.name = facultyName;
         this.doyen = doyen;
     }
+
 }

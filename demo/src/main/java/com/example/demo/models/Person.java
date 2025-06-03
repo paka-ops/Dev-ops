@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -13,10 +14,17 @@ import java.util.Date;
 @NoArgsConstructor
 public abstract class Person {
     private Long id;
+    @NotBlank(message = "name is requierd ")
     private String name;
+    @NotBlank(message = "second name is requierd")
     private String secondName;
+    @NotBlank(message = "telphone is requierd")
     private String telephone;
+    @Email
+    @NotBlank(message = "email is requierd")
     private String email;
+    @Size(min = 8 ,max = 12)
+    @NotBlank(message = "passowrd is requierd")
     private String password;
     private Date createdAt;
 

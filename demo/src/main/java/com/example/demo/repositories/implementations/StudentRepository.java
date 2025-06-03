@@ -5,11 +5,14 @@ import com.example.demo.models.Faculty;
 import com.example.demo.models.Student;
 import com.example.demo.repositories.interfaces.IFacutly;
 import com.example.demo.repositories.interfaces.IStudent;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -17,12 +20,14 @@ import java.sql.Types;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-
+@Repository
 public class StudentRepository implements IStudent {
-    private JdbcTemplate jdbc;
-    private IFacutly facutlyRepository;
-    public StudentRepository(JdbcTemplate jdbc,IFacutly facutlyRepository){
-        this.facutlyRepository = facutlyRepository;
+    private final JdbcTemplate jdbc;
+
+    private final IFacutly facultyRepository;
+    @Autowired
+    public StudentRepository(JdbcTemplate jdbc,IFacutly facultyRepository){
+        this.facultyRepository = facultyRepository;
         this.jdbc = jdbc;
     }
 
@@ -37,7 +42,7 @@ public class StudentRepository implements IStudent {
                 rs.getDate("createdAt")
         );
     }
-    private Long saveStudentAndReturKey(Student student){
+    private Long saveStudentAndReturnKey(Student student) throws SQLException{
         student.setCreatedAt(new Timestamp(new Date().getTime()));
         String sql = "insert into Person(name,secondName,email,passwords,createdAt) values(?,?,?,?,?)";
         PreparedStatementCreatorFactory pscFactory = new PreparedStatementCreatorFactory(sql, Types.VARCHAR,Types.VARCHAR,Types.VARCHAR,Types.VARCHAR,Types.TIMESTAMP);
@@ -52,18 +57,27 @@ public class StudentRepository implements IStudent {
                 )
         );
         KeyHolder key = new GeneratedKeyHolder();
-        jdbc.update(psc,key);
-        return key.getKey().longValue();
+
+        int result = jdbc.update(psc,key);
+        if(result!=0){
+            return key.getKey().longValue();
+        }else throw new SQLException("failled");
+
 
     }
-    private boolean saveStudentWithFaculty(long studentId, String facultyId){
-        String sql = "insert into student_faculty(studentId,facultyId) values (?,?)";
-        int result = jdbc.update(sql,studentId,facultyId);
-        if(result > 0){
-            return true;
-        }else{
+    private boolean saveStudentWithFaculty(long studentId, String facultyId)  {
+        try{
+            if(!facultyRepository.findOne(facultyId).equals(new Faculty())){
+                String sql = " insert into Student_Faculty(studentId,facultyId) values(?,?)";
+                jdbc.update(sql,studentId,facultyId);
+                return true;
+            }else return false;
+
+        }catch (ElementNotFoundException e){
+            e.getMessage();
             return false;
         }
+
     }
 
     @Override
@@ -84,20 +98,23 @@ public class StudentRepository implements IStudent {
     }
 
     @Override
-    public Boolean save(Student student) {
-        long studentId = saveStudentAndReturKey(student);
+    public Boolean save(Student student) throws SQLException {
+        long studentId = saveStudentAndReturnKey(student);
         String facId = student.getFaculty().getId();
-        try{
+        try {
 
-            if(!facutlyRepository.findOne(facId).equals(null)){
-               boolean result =  saveStudentWithFaculty(studentId,facId);
-               if(result){
-                   return true;
-               }else return false;
-            }else return false;
-        }catch (ElementNotFoundException e){
+            if (!facultyRepository.findOne(facId).equals(new Faculty())) {
+                boolean result = saveStudentWithFaculty(studentId, facId);
+                if (result) {
+                    return true;
+                } else return false;
+            } else {
+                return false;
+            }
+        } catch (ElementNotFoundException e) {
             e.getMessage();
             return false;
+
         }
 
     }

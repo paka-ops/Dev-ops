@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 8df6b84bc793802cc977af45e0506e09b14291e2
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -35,47 +32,61 @@
         <div class="col-md-6 mb-3">
             <h4>Connexion</h4>
             <form method="post" th:object="${student}">
+
                 <div class="mb-3">
-                    <label></label>
-                    <input type="email" class="form-control" placeholder="email@exemple.com">
-                </div>
-                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
-                <div class="mb-3">
-                    <label></label>
-                    <input type="email" class="form-control" placeholder="email@exemple.com">
-                </div>
-                <div class="mb-3">
-                    <label></label>
-                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                    <label>Nom</label>
+                    <input type="text" class="form-control" placeholder="PAKA" th:field="*{name}">
+                    <span th:if="${#fields.hasErrors('name')}"
+                          th:errors="*{name}"
+                          class="text-danger"
+                    ></span>
                 </div>
                 <div class="mb-3">
-                    <label></label>
-                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                    <label>Prenom</label>
+                    <input type="text" class="form-control" placeholder="Wess" th:field="*{secondName}">
+                    <span th:if="${#fields.hasErrors('secondName')}"
+                          th:errors="*{secondName}" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>Telephone</label>
+                    <input type="number" class="form-control" placeholder="00000000" th:field="*{telephone}">
+                    <span th:if="${#fields.hasErrors('telephone')}"
+                          th:errors="*{telephone}" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label>Email</label>
-                    <input type="email" class="form-control" placeholder="email@exemple.com">
+                    <input type="email" class="form-control" placeholder="email@exemple.com" th:field="*{email}">
+                    <span th:if="${#fields.hasErrors('email')}"
+                          th:errors="*{email}" class="text-danger"></span>
                 </div>
+
                 <div class="mb-3">
                     <label>Mot de passe</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" >
+
                 </div>
                 <div class="mb-3">
                     <label> faculty</label>
-                    <select id="choix" class="form-select" aria-label="Menu déroulant">
-                        <option selected disabled>-- Sélectionnez un élément --</option>
-                        <div th:if="${faculties != null }">
+                    <select id="choix" class="form-select" aria-label="Menu déroulant" th:field="*{faculty.id}" required>
+                        <option value="" ></option>
 
-                            <option th:each="faculty : ${faculties}" th:text="${faculty.name}" th:value="${faculty.id}" > </option>
-                        </div>
-                        <div th:unless="${faculties != null }">
-                            <option th:text ="${message}"></option>
-                        </div>
+                            <option
+                                    th:if="${faculties != null }"
+                                    th:each="fac : ${faculties}"
+                                    th:text="${fac.name}" th:value="${fac.id}"
+                            > </option>
+
+
+                            <option th:text ="${message}" th:unless="${faculties != null }" value="NULL"></option>
+
                     </select>
+                    <span th:if="${#fields.hasErrors('faculty')}"
+                          th:errors="*{faculty}" class="text-danger"></span>
                 </div>
                 <button class="btn btn-primary">Se connecter</button>
             </form>
         </div>
+
         <div class="col-md-6 mb-3">
             <h4>Inscription</h4>
             <form>

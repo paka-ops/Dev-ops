@@ -3,6 +3,7 @@ package com.example.demo.models;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,9 @@ public abstract class Person {
     private String name;
     @NotBlank(message = "second name is requierd")
     private String secondName;
+
     @NotBlank(message = "telphone is requierd")
+    @Pattern(regexp = "[0-9+]",message = "le numéro de telephone est incorrect")
     private String telephone;
     @Email
     @NotBlank(message = "email is requierd")

@@ -4,22 +4,35 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.awt.*;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Book {
+    private Long id;
     private Long isbn;
     private String bookName;
-    private String Author;
+    private String author;
+    private String description;
     private Category category;
     private String language;
+    private String image;
+    private String copies;
 
-    private static enum Category{
+
+
+
+    public static enum Category{
         HISTORY,
         COMPUTERSCIENCE,
         SCIENCE,
         TECHNOLOGY,
         ART,
-        ROMANCE
+        ROMANCE,
+        CLASSIQUE,
+        PHILOSOPHIE,
+        ADVENTURE,
+        SCIENCE_FICTION
     }
 }

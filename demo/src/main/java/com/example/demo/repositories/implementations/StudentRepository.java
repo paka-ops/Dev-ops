@@ -1,6 +1,7 @@
 
 package com.example.demo.repositories.implementations;
 
+import com.example.demo.exceptions.ElementListNotFoundException;
 import com.example.demo.exceptions.ElementNotFoundException;
 import com.example.demo.models.Faculty;
 import com.example.demo.models.Student;
@@ -39,13 +40,13 @@ public class StudentRepository implements IStudent {
                 rs.getString("secondName"),
                 rs.getString("email"),
                 rs.getString("telephone"),
-                rs.getString("passwords"),
+                rs.getString("password"),
                 rs.getDate("createdAt")
         );
     }
     private Long saveStudentAndReturnKey(Student student) throws SQLException{
         student.setCreatedAt(new Timestamp(new Date().getTime()));
-        String sql = "insert into Person(name,secondName,email,passwords,createdAt) values(?,?,?,?,?)";
+        String sql = "insert into Person(personName,secondName,email,passwordd,createdAt) values(?,?,?,?,?)";
         PreparedStatementCreatorFactory pscFactory = new PreparedStatementCreatorFactory(sql, Types.VARCHAR,Types.VARCHAR,Types.VARCHAR,Types.VARCHAR,Types.TIMESTAMP);
         pscFactory.setReturnGeneratedKeys(true);
         PreparedStatementCreator psc = pscFactory.newPreparedStatementCreator(
@@ -62,7 +63,7 @@ public class StudentRepository implements IStudent {
         int result = jdbc.update(psc,key);
         if(result!=0){
             return key.getKey().longValue();
-        }else throw new SQLException("failled");
+        }else throw new SQLException("failed");
 
 
     }
@@ -82,20 +83,34 @@ public class StudentRepository implements IStudent {
     }
 
     @Override
-    public Student findById(long id) {
-        String sql = "Select name,secondName,email,telephone from person where id  = ?";
+    public Student findById(long id) throws ElementNotFoundException {
+        String sql = "select name,secondName,email,telephone from person where id  = ?";
+        Student student = jdbc.queryForObject(sql,this::studentRowMapper,id);
+        if(student != null){
+            return student;
+        }else throw new ElementNotFoundException("pas d' element trouvé");
 
-        return null;
+
     }
 
     @Override
-    public Student findByName(String name) {
-        return null;
+    public Student findByName(String name) throws ElementNotFoundException {
+        String sql = "select name,secondName,email,telephone from person where name  = ? " ;
+        Student student =  jdbc.queryForObject(sql,this::studentRowMapper,name);
+        if(student != null) {
+            return student;
+        }else throw new ElementNotFoundException("pas d' element ");
+
     }
 
     @Override
-    public List<Student> findAll() {
-        return null;
+    public List<Student> findAll() throws ElementListNotFoundException {
+        String sql = "select id,personName,secondName,email,telephone,password,createdAt from Person where roles = ?" ;
+        List<Student> students = jdbc.query(sql,this::studentRowMapper,"student");
+        if(students.isEmpty()) {
+            throw new ElementListNotFoundException("pas d' element ");
+
+        }else  return students;
     }
 
     @Override
@@ -121,9 +136,12 @@ public class StudentRepository implements IStudent {
     }
 
     @Override
-    public Boolean delete(long id) {
-
-        return null;
+    public Boolean delete(long id) throws ElementNotFoundException {
+        String sql = "delete from person where id = ?";
+        int result = jdbc.update(sql,id);
+        if(result != 0){
+            return true;
+        }else throw new ElementNotFoundException("pas d' element trouvé");
     }
 
 }

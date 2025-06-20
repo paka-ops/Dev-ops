@@ -1,7 +1,30 @@
-insert into Person(id,personName,secondName,email,telephone,passwords,createdAt,roles,isActif) values(3,'PAKA','Wess','wesspaka@gmail.com','dfds', '940809','2025-05-21 12:30:39','Admin',true);
+insert into Person(id,personName,secondName,email,telephone,password,createdAt,roles,isActif) values
+                                                                                                  (3,'PAKA','Wess','wesspaka@gmail.com','dfds', '940809','2025-05-21 12:30:39','Admin',true),
+                                                                                                  (4,'PAKA','Wess','wesspaka@gmail.com','dfds', '940809','2025-05-21 12:30:39','student',true);
 INSERT INTO Faculty (id, facultyname, doyen) VALUES ('FSS', 'Faculté des Sciences et Santé', 'Pr. Adjavon'),
                                                      ('FME', 'Faculté de Médecine', 'Dr. Mensah'),
                                                      ('FDR', 'Faculté de Droit', 'Me. Tchalim'),
                                                      ('FLH', 'Faculté des Lettres et Humanités', 'Pr. Boko'),
                                                      ('FEC', 'Faculté d''Économie', 'Pr. Kodjo')
                                                      ;
+INSERT INTO Book (isbn, book_name, author, category, description, book_language, image, copies) VALUES
+                                                                                                    (9780140449136, 'The Odyssey', 'Homer', 'romance', 'An ancient Greek epic poem attributed to Homer.', 'ENG', 'the_odyssey.jpeg', 5),
+                                                                                                    (9780140449266, 'The Iliad', 'Homer', 'romance', 'A tale of the Trojan War and Achilles.', 'ENG', 'the_iliad.jpeg', 4),
+                                                                                                    (9780451524935, '1984', 'George Orwell', 'art', 'A chilling prophecy about the future.', 'ENG', '1984.jpeg', 7),
+                                                                                                    (9780743273565, 'The Great Gatsby', 'F. Scott Fitzgerald', 'classique', 'The story of the mysteriously wealthy Jay Gatsby.', 'ENG', 'the_great_gatsby.jpeg', 6),
+                                                                                                    (9780141182803, 'Brave New world ', 'Virginia Woolf', 'art', 'Explores themes of loss, subjectivity, and the passage of time.', 'ENG', 'brave_new_world.jpeg', 3),
+                                                                                                    (9780590353427, 'Harry Potter And The Philosophers Stone', 'J.K. Rowling', 'history', 'The first adventure of the young wizard Harry Potter.', 'ENG', 'harry_potter_and_the_philosophers_stone.jpeg', 10),
+                                                                                                    (9780553296983, 'Dune', 'Frank Herbert', 'Science_Fiction', 'A saga of a desert planet and its resources.', 'ENG', 'dune.jpeg', 5),
+                                                                                                    (9780061120084, 'To Kill a Mockingbird', 'Harper Lee', 'classique', 'A tale of racial injustice in the Deep South.', 'ENG', 'the_catcher_in_the_rye.jpeg', 8),
+                                                                                                    (9780307277671, 'The Road', 'Cormac McCarthy', 'Science_Fiction', 'A father and son journey through a burned America.', 'ENG', 'the_brother_karamazov.jpeg', 4),
+                                                                                                    (9780439136365, 'Crime and Punishment', 'J.K. Rowling', 'history', 'Harry learns about Sirius Black.', 'ENG', 'crime_and_punishment.jpeg', 9),
+                                                                                                    (9780141036137, 'Animal Farm', 'George Orwell', 'history', 'An allegory about farm animals rebelling.', 'ENG', 'animal_farm.jpeg', 6),
+                                                                                                    (9780156012195, 'Don Quixote', 'Antoine de Saint-Exupéry', 'art', 'A story of a young prince from another planet.', 'FR', 'don_quixote.jpeg', 5),
+                                                                                                    (9780439554930, 'Jane Eyre', 'J.K. Rowling', 'history', 'Harry is mysteriously entered into the Triwizard Tournament.', 'ENG', 'jane_eyre.jpeg', 7),
+                                                                                                    (9780140449273, 'Meditations', 'Marcus Aurelius', 'Philosophie', 'Personal writings by the Roman Emperor.', 'ENG', 'meditations.jpeg', 3),
+                                                                                                    (9780679783272, 'Pride and Prejudice', 'Jane Austen', 'Romance', 'A story about manners and marriage.', 'ENG', 'pride_and_prejudice.jpeg', 4),
+                                                                                                    (9780486282114, 'Frankenstein', 'Mary Shelley', 'art', 'The story of Dr. Frankenstein and his monster.', 'ENG', 'frankenstein.jpg', 5),
+                                                                                                    (9780140449181, 'Crime and Punishment', 'Fyodor Dostoevsky', 'classique', 'A psychological drama of crime and remorse.', 'RUS', 'crime_and_punishment.jpeg', 4),
+                                                                                                    (9780374533557, 'Sapiens', 'Yuval Noah Harari', 'History', 'A brief history of humankind.', 'ENG', 'sapiens.jpeg', 6),
+                                                                                                    (9780142437230, 'Moby-Dick', 'Herman Melville', 'Adventure', 'Captain Ahab’s obsessive quest for the white whale.', 'ENG', 'moby-dick.jpeg', 3),
+                                                                                                    (9782757815804, 'L Étranger', 'Albert Camus', 'Philosophie', 'A novel about absurdism and alienation.', 'FR', 'etranger.jpeg', 5);

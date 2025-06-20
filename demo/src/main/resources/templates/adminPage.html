@@ -65,22 +65,20 @@
                 <td> </td>
                 <td>
 
-                    <button class="btn btn-sm btn-warning"  onclick="deleteUser(5)">Modifier</button>
-                    <button class="btn btn-sm btn-danger">Supprimer</button>
+                    <button class="btn btn-sm btn-warning" >Modifier</button>
+                    <form th:action="@{admin/delete/{id} (id = ${element.id})}" method="post">
+                        <input type="hidden" value="delete" name="_method">
+                        <button class="btn btn-sm btn-danger " >Supprimer</button>
+                    </form>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
+    <div >
+        <button class="btn btn-sm btn-outline-primary" ><a th:href="@{students}">consulter la liste des etudiant</a> </button>
+    </div>
 </section>
 <script type="text/javascript">
-
-    function deleteUser(id){
-        fetch(`http://localhost:8080/admin/${id}`,{
-            method: 'DELETE'
-        });
-
-    }
-
 </script>
 </body>

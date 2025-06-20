@@ -1,5 +1,6 @@
 package com.example.demo.repositories.implementations;
 
+import com.example.demo.exceptions.ElementListNotFoundException;
 import com.example.demo.exceptions.ElementNotFoundException;
 import com.example.demo.models.Admin;
 import com.example.demo.repositories.interfaces.IAdmin;
@@ -35,7 +36,7 @@ public class AdminRepository implements IAdmin {
                 rs.getString("secondName"),
                 rs.getString("email"),
                 rs.getString("telephone"),
-                rs.getString("passwords"),
+                rs.getString("password"),
                 rs.getDate("createdAt"),
                 Admin.Role.valueOf(rs.getString("roles")),
                 rs.getBoolean("isActif")
@@ -99,13 +100,13 @@ public class AdminRepository implements IAdmin {
     }
 
     @Override
-    public List<Admin> findAll() throws ElementNotFoundException {
+    public List<Admin> findAll() throws ElementListNotFoundException {
         String sql = "select * from Person";
         List<Admin> admins =  jdbc.query(sql,this::adminRowMapper);
         if(!admins.equals(null)){
             return admins;
         }else {
-            throw new  ElementNotFoundException("pas d' admin dans la base de donnée veuillez contacter l' administrateur");
+            throw new ElementListNotFoundException("pas d' admin dans la base de donnée veuillez contacter l' administrateur");
         }
     }
 
@@ -124,5 +125,6 @@ public class AdminRepository implements IAdmin {
             return false;
         }
     }
+
 
 }

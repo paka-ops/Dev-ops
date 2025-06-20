@@ -5,7 +5,7 @@ create table Person(
                        secondName varchar(64),
                        email varchar(28),
                        telephone varchar(18),
-                       passwords varchar(8),
+                       password varchar(8),
                        createdAt TIMESTAMP,
                        roles varchar(10),
                        isactif  integer
@@ -19,23 +19,27 @@ create table Faculty(
 
 );
 create table Book(
-                     isbn integer primary key ,
-                     bookName varchar(64),
+                     id integer primary key auto_increment,
+                     isbn  bigint,
+                     book_name varchar(64),
                      author   varchar(64),
                      category varchar(20),
-                     booklanguage varchar(3)
+                     description varchar,
+                     book_language varchar(3),
+                     image varchar,
+                     copies integer
 );
 create table Student_Book(
                              studentId integer ,
                              bookId integer,
-                             foreign key (bookId) references Book(isbn),
+                             foreign key (bookId) references Book(id),
                              foreign key (studentId) references Person(id)
 );
 create table Student_Faculty(
                                 studentId integer,
-                                facId integer,
+                                facultyId VARCHAR,
                                 foreign key (studentId) references Person(id),
-                                foreign key (facId) references Faculty(id)
+                                foreign key (facultyId) references Faculty(id)
 );
 
 

@@ -51,13 +51,27 @@ public class StudentController {
         return "signUp";
 
     }
-    @PostMapping
-    public String processForm(@Valid Student student  , Errors errors) throws SQLException {
+    @PostMapping("/form")
+    public String processForm(@ModelAttribute @Valid Student student  , Errors errors,Model model) throws SQLException, ElementNotFoundException, ElementListNotFoundException {
         if(errors.hasErrors()){
+            List<Faculty> faculties = facultyRepository.findAll();
+            model.addAttribute("faculties",faculties);
+
             return "signUp";
+        }else {
+
+            System.out.println(student.getFaculty().getId());
+            System.out.println(student.getName());
+            try {
+                Faculty faculty = facultyRepository.findOne(student.getFaculty().getId());
+                student.setFaculty(faculty);
+                studentRepository.save(student);
+                return null;
+            } catch (ElementNotFoundException e) {
+                System.out.println(e.getMessage());
+                return null;
+            }
         }
-        studentRepository.save(student);
-        return null;
 
     }
 
